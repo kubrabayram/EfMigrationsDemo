@@ -5,12 +5,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EfMigrationsDemo.Migrations
 {
-    /// <inheritdoc />
     public partial class AddPostTable : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            // BLOGS: CreatedTimestamp için DB default'u ekle (SQLite: CURRENT_TIMESTAMP)
             migrationBuilder.AlterColumn<DateTime>(
                 name: "CreatedTimestamp",
                 table: "Blogs",
@@ -20,6 +19,7 @@ namespace EfMigrationsDemo.Migrations
                 oldClrType: typeof(DateTime),
                 oldType: "TEXT");
 
+            // POSTS tablosu: CreatedAt alanı NOT NULL + default
             migrationBuilder.CreateTable(
                 name: "Posts",
                 columns: table => new
@@ -28,7 +28,7 @@ namespace EfMigrationsDemo.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Title = table.Column<string>(type: "TEXT", nullable: false),
                     Content = table.Column<string>(type: "TEXT", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "TEXT", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     BlogId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
@@ -48,7 +48,6 @@ namespace EfMigrationsDemo.Migrations
                 column: "BlogId");
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

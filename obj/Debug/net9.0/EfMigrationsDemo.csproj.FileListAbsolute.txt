@@ -135,3 +135,4 @@ C:\Users\kubra\Desktop\migration\EfMigrationsDemo\obj\Debug\net9.0\refint\EfMigr
 C:\Users\kubra\Desktop\migration\EfMigrationsDemo\obj\Debug\net9.0\EfMigrationsDemo.pdb
 C:\Users\kubra\Desktop\migration\EfMigrationsDemo\obj\Debug\net9.0\EfMigrationsDemo.genruntimeconfig.cache
 C:\Users\kubra\Desktop\migration\EfMigrationsDemo\obj\Debug\net9.0\ref\EfMigrationsDemo.dll
+C:\Users\kubra\Desktop\migration\EfMigrationsDemo\obj\Debug\net9.0\EfMigrationsDemo.sourcelink.json
