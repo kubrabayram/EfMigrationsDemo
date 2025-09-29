@@ -1,6 +1,6 @@
 using System;
 
-public class Post
+public partial class Post
 {
     public int Id { get; set; }
     public string Title { get; set; } = default!;
@@ -10,4 +10,6 @@ public class Post
     // Foreign Key (BlogId) → her post bir blog’a ait
     public int BlogId { get; set; }
     public Blog Blog { get; set; } = default!;
+
+    public ICollection<Comment> Comments { get; set; } = new List<Comment>();
 }
